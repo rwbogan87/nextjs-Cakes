@@ -1,0 +1,12 @@
+Next.js is a framework for react
+
+'fullstack' framework for react js, enhances it and makes large scale easier with more features
+
+*server-side rendering
+preparing page content that is pre-rendered on server, and the server handles the request (no waiting in certain scenarios)
+standard NextJs apps are always pre-rendered by default, out of the box (ready for search engine optimizations, better initial load)
+
+server-side and client-side data fetching is blended to create finished, rendered page
+
+*file-based routing
+special pages folder, structure defines routes automatically; less code, less work, more concise
