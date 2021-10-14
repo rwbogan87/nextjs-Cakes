@@ -149,7 +149,7 @@ export default function Cakes(props) {
                 }}
             >
                 {/* <h2 className="greatVibesFont">{category}</h2> */}
-                <select className="greatVibesFont" className={styles.selectText}value={category} onChange={(e) => { 
+                <select className={styles.selectText}value={category} onChange={(e) => { 
                     setActiveStep(0)
                     setCategory(capitalize(e.target.value)) 
                     }}>
