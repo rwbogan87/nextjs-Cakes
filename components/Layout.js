@@ -1,11 +1,12 @@
+import layoutStyles from '../styles/Layout.module.css'
+
 const Layout = ({children}) => {
     return (
-        <>
-        <div>
-            <h1>Layout</h1>
-            <p>{children}</p>
+        <div className={layoutStyles.container}>
+            <main className={layoutStyles.main}>
+                {children}
+            </main>
         </div>
-        </>
     )
 }
 

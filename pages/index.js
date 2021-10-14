@@ -1,21 +1,19 @@
 //* our-domain.com/
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
-
-import styled from 'styled-components';
-
+import Button from "@material-ui/core/Button";
 
 function HomePage() {
     return (
         <Fragment>
-            <h1>Cake Magic</h1>
             <Link href="/cakes">
-                <p
+                <Button color='inherit'
                     style={{
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                     }}
-                    >Cakes Gallery</p>
+                    >Cakes Gallery</Button>
             </Link>
+            <p>Home Page</p>
         </Fragment>
     )
 }
