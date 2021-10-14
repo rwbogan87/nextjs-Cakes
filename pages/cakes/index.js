@@ -17,11 +17,11 @@ const ImageHover = styled.img`
     margin-right: auto;
     z-index: 99;
     transition: transform .3s;
-    :hover {
-        -ms-transform: scale(1.5); 
-        -webkit-transform: scale(1.5); 
-        transform: scale(1.5); 
-    }
+    // :hover {
+    //     -ms-transform: scale(1.25); 
+    //     -webkit-transform: scale(1.25); 
+    //     transform: scale(1.25); 
+    // }
 `
 //* our-domain.com/cakes
 
@@ -67,17 +67,22 @@ const picsArray = [
 
 
 export default function Cakes(props) {
-    console.log('[app loaded]; props:',)
+    console.log('[app loaded]; props:', props)
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const [transition, setTransition] = useState(true)
-    const [category, setCategory] = useState('birthday');
+    const [category, setCategory] = useState('Birthday');
     console.log('useState category:', category)
 
     //*attached to image onLoad for future styling
     const onloadFunc = () => {
         // console.log('loaded')
     }
+
+    const capitalize = (s) => {
+        if (typeof s !== 'string') return ''
+        return s.charAt(0).toUpperCase() + s.slice(1)
+      }
 
     useState(()=> {
         console.log('useState category:', category)
@@ -112,7 +117,10 @@ export default function Cakes(props) {
             return (filteredBirthdays)
         } else if (category === 'Baby Shower') {
             return (filteredBabyShowers)
-        } else return (filteredGraduations)
+        } else if (category === 'Graduation') {
+            return (filteredGraduations)
+        }
+        else return (filteredBirthdays)
     }
 
     return (
@@ -132,6 +140,7 @@ export default function Cakes(props) {
                     marginLeft: "auto",
                     marginRight: "auto",
                     padding: 20,
+                    paddingBottom: 150,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -139,10 +148,10 @@ export default function Cakes(props) {
                     backgroundColor: 'lavender',
                 }}
             >
-                <h2 className="greatVibesFont">{category}</h2>
-                <select value={category} onChange={(e) => { 
+                {/* <h2 className="greatVibesFont">{category}</h2> */}
+                <select className="greatVibesFont" className={styles.selectText}value={category} onChange={(e) => { 
                     setActiveStep(0)
-                    setCategory(e.target.value) 
+                    setCategory(capitalize(e.target.value)) 
                     }}>
                     <option value='Birthday'>Birthday</option>
                     <option value='Baby Shower'>Baby Shower</option>
@@ -212,7 +221,8 @@ export default function Cakes(props) {
                         [activeStep].imgPath}
                         style={{
                             height: 500,
-                            maxWidth: 650,
+                            maxHeight: '100vh',
+                            maxWidth: '100vw',
                             display: "block",
                             overflow: "hidden",
 
@@ -227,10 +237,9 @@ export default function Cakes(props) {
     )
 }
 
-export const getStaticProps = () => {
-    return {
-        props: {
-            picsArray
-        }
-    }
-}
+// export const getStaticProps = () => {
+//     return {
+//         props: {
+//         }
+//     }
+// }
