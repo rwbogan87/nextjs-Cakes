@@ -129,13 +129,12 @@ export default function Cakes(props) {
 
     return (
         <Fragment>
-            <h1>The Cakes Page</h1>
             <Link href="/">
-                <p
+                <Button
                     style={{
                         cursor: 'pointer'
                     }}
-                >Home</p>
+                >Home</Button>
             </Link>
 
             {/*//! image slider */}
