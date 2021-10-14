@@ -11,12 +11,14 @@ import styles from '../../styles/Cakes.module.css';
 
 import styled from 'styled-components';
 
+//! Why does the doctor cake show on initial load with mobile????
 
 const ImageHover = styled.img`
     margin-left: auto;
     margin-right: auto;
     z-index: 99;
     transition: transform .3s;
+    // hover disabled for mobile
     // :hover {
     //     -ms-transform: scale(1.25); 
     //     -webkit-transform: scale(1.25); 
@@ -71,7 +73,7 @@ export default function Cakes(props) {
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const [transition, setTransition] = useState(true)
-    const [category, setCategory] = useState('Birthday');
+    const [category, setCategory] = useState('All');
     console.log('useState category:', category)
 
     //*attached to image onLoad for future styling
@@ -113,7 +115,9 @@ export default function Cakes(props) {
     })
 
     const targetArray = () => {
-        if (category == 'Birthday') {
+        if (category === 'All') {
+            return (picsArray)
+        } else if (category == 'Birthday') {
             return (filteredBirthdays)
         } else if (category === 'Baby Shower') {
             return (filteredBabyShowers)
@@ -153,6 +157,7 @@ export default function Cakes(props) {
                     setActiveStep(0)
                     setCategory(capitalize(e.target.value)) 
                     }}>
+                    <option value='All'>All</option>
                     <option value='Birthday'>Birthday</option>
                     <option value='Baby Shower'>Baby Shower</option>
                     <option value='Graduation'>Graduation</option>
