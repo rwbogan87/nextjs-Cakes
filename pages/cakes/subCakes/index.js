@@ -1,7 +1,8 @@
 //* our-domain.com/cakes/subCakes
+//* for learning purposes
 
 function subCakes() {
-    return <h1>The subCakes Page</h1>
+    return <h1>The Birthday Cakes Page</h1>
     
 }
 

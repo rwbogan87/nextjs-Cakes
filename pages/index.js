@@ -1,15 +1,20 @@
 //* our-domain.com/
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
-// import Button from "@material-ui/Button";
+
+import styled from 'styled-components';
 
 
 function HomePage() {
     return (
         <Fragment>
-            <h1>Aishas Cakes Homepage</h1>
+            <h1>Cake Magic</h1>
             <Link href="/cakes">
-                <p>Cakes Gallery</p>
+                <p
+                    style={{
+                        cursor: 'pointer'
+                    }}
+                    >Cakes Gallery</p>
             </Link>
         </Fragment>
     )
