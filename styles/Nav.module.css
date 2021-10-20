@@ -1,7 +1,7 @@
 .navBar {
-    height: 20px;
+    height: 40px;
     width: 100vw;
-    background-color: black;
-    margin-top: -10
-    
+    background-color: grey;
+    position: fixed;
+    top: 0;
 }

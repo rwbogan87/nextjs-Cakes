@@ -5,8 +5,7 @@ import Nav from '../components/Nav'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <h1>MagiCakes</h1>
+    <Layout className={styles.layout}>
       <Component {...pageProps} />
     </Layout>
   )

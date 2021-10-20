@@ -13,7 +13,7 @@ function HomePage() {
                     }}
                     >Cakes Gallery</Button>
             </Link>
-            <p>Home Page</p>
+            <p>Home</p>
         </Fragment>
     )
 }

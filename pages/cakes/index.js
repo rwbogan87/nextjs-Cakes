@@ -69,12 +69,10 @@ const picsArray = [
 
 
 export default function Cakes(props) {
-    console.log('[app loaded]; props:', props)
     const theme = useTheme();
     const [activeStep, setActiveStep] = useState(0);
     const [transition, setTransition] = useState(true)
     const [category, setCategory] = useState('All');
-    console.log('useState category:', category)
 
     //*attached to image onLoad for future styling
     const onloadFunc = () => {
@@ -148,7 +146,6 @@ export default function Cakes(props) {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    backgroundColor: 'lavender',
                 }}
             >
                 {/* <h2 className="greatVibesFont">{category}</h2> */}
