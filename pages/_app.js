@@ -6,7 +6,7 @@ import Nav from '../components/Nav'
 function MyApp({ Component, pageProps }) {
   return (
     <Layout className={styles.layout}>
-      <Component {...pageProps} />
+      <Component {...pageProps} / >
     </Layout>
   )
 }
