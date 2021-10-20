@@ -1,13 +1,14 @@
-import styles from '../styles/Nav.module.css'
+import navStyles from '../styles/Nav.module.css'
+import Head from 'next/head'
 
-
-const Nav = ({children}) => {
+const Nav = ({ children }) => {
     return (
         <>
-        <div className={styles.navBar}>
-            <h1>Nav</h1>
-            <p>{children}</p>
-        </div>
+            <div className={navStyles.navBar}>
+                <Head>
+                    <title>Cakes</title>
+                </Head>
+            </div>
         </>
     )
 }
